@@ -1,12 +1,13 @@
 
 exports.seed = function(knex, Promise) {
-  return knex('table_name')
+  return knex('cohorts')
   .truncate()
     .then(function () {
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
+      return knex('cohorts').insert([
+        {name: 'FSW16'},
+        {name: 'FSW17'},
+        {name: 'IOS10'},
+        {name: 'CS15'}
       ]);
     });
 };
