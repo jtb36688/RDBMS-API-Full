@@ -38,9 +38,9 @@ server.get("/api/cohorts/:id", async (req, res) => {
 });
 
 server.get("/api/cohorts/:id/students", async (req, res) => {
-  const { id } = req.params.id;
   try {
-    const found = await db("students").where({ cohort_id: id });
+    const found = await db("students")
+    .where({ cohort_id: req.params.id });
     res.status(200).json(found);
   } catch (error) {
     res.status(500).json(error);
